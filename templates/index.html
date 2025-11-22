@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>キャバ嬢Q&A</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>キャバ嬢のためのQ&A掲示板</h1>
+    <a href="/ask">質問する</a>
+    <hr>
+    {% if questions %}
+        {% for q in questions %}
+            <div>
+                <h3><a href="/question/{{ q.id }}">{{ q.title }}</a></h3>
+                <p>{{ q.created_at }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>まだ質問がありません</p>
+    {% endif %}
+</body>
+</html>
